@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "934d1de5-736a-49e1-8355-57d8a9c41a9d",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "active",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6MiwiZW1haWwiOiJDaGF1aGFuVmlzaGFsODk4MDgxQGdtYWlsLmNvbSIsImlhdCI6MTY2MjcwMDc4OX0.XhzhwCnecRngLFWVuB_5uny74voJZw7nqPaUxVULSBI",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/active-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"active-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InActive",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6MiwiZW1haWwiOiJkYXJwaXRAZ21haWwuY29tIiwiaWF0IjoxNjYyNzE1MDk3fQ.gUvipGqu2TLXTTT8jGZOr4Jps7s5pA77bg3KGsg2YL4",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/deactive-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"deactive-user"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"\",\n    \"email\":\"jatan@gmail.com\",\n    \"password\":\"Darpit@999\",\n    \"mobile\":\"\",\n    \"gender\":\"male\",\n    \"birthDate\":\"2001/03/30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register"
+					]
+				},
+				"description": "{\"name\":\"vishal\",\n\"email\":\"vishal898081@.gmail.com\",\n\"password\":\"visha123\",\n\"mobile\":\"9429733534\",\n\"gender\":\"male\",\n\"birthDate\":\"2001/03/01\"\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "login-User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"email\":\"darpit@gmail.com\",\n    \"password\":\"Darpit@999\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6MiwiZW1haWwiOiJkYXJwaXRAZ21haWwuY29tIiwiaWF0IjoxNjYyNzE1MDk3fQ.gUvipGqu2TLXTTT8jGZOr4Jps7s5pA77bg3KGsg2YL4",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page\":1,\n\"item_per_page\":10,\n\"columname\":\"id\",\n\"orderBy\" : \"ASC\",\n\"filterValue\" : \"le\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/show-book?=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"show-book"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issue_book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6MiwiZW1haWwiOiJkYXJwaXRAZ21haWwuY29tIiwiaWF0IjoxNjYyNzE1MDk3fQ.gUvipGqu2TLXTTT8jGZOr4Jps7s5pA77bg3KGsg2YL4",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Bookid",
+							"value": "3",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/issueBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"issueBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show History",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6MiwiZW1haWwiOiJkYXJwaXRAZ21haWwuY29tIiwiaWF0IjoxNjYyNzE1MDk3fQ.gUvipGqu2TLXTTT8jGZOr4Jps7s5pA77bg3KGsg2YL4",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page\":1,\n\"item_per_page\":3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReturnBook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "id",
+						"value": "1",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6MiwiZW1haWwiOiJkYXJwaXRAZ21haWwuY29tIiwiaWF0IjoxNjYyNzE1MDk3fQ.gUvipGqu2TLXTTT8jGZOr4Jps7s5pA77bg3KGsg2YL4",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/return-book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"return-book"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookDetail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6MiwiZW1haWwiOiJDaGF1aGFuVmlzaGFsODk4MDgxQGdtYWlsLmNvbSIsImlhdCI6MTY2MjcwMDc4OX0.XhzhwCnecRngLFWVuB_5uny74voJZw7nqPaUxVULSBI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/show-book-detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"show-book-detail"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

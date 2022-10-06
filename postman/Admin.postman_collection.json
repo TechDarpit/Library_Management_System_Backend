@@ -1,0 +1,676 @@
+{
+	"info": {
+		"_postman_id": "1cfd08ee-0688-47be-a9f4-d8cb9a68339d",
+		"name": "Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Add-book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYzMDc0NDkzfQ.U_dbUU-3hj1GbHS4PsQz2deYH_Tsmg8XSh3XtkV8-2E",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Title",
+									"value": "Avengers: Assemble",
+									"type": "default"
+								},
+								{
+									"key": "Author",
+									"value": "Stan lee",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "Quantity",
+									"value": "15",
+									"type": "default"
+								},
+								{
+									"key": "Description",
+									"value": "Avengers Assemble is famous dioulogue of Captain America ",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/add-book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"add-book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show-books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"page\":1,\n\"item_per_page\":10,\n\"columname\":\"id\",\n\"orderBy\" : \"DESC\",\n\"filterValue\" :\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/show-book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"show-book"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "item_per_page",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/delete-book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"delete-book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "Title",
+									"value": "Avengers: The Man Who Stole Tomorrow",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "AuthorName",
+									"value": "Len Wein",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/vishal.c/Pictures/Lib photos/686793.jpg"
+								},
+								{
+									"key": "quantity",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Description",
+									"value": "Avenger Story book was written by three different writter and i give them credit but right now i'm busy so i will update as soon as possible see u next time :) ",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/update-book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"update-book"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "show-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjE5NDQzfQ.L99toqpJIuAFnmV0FvwhM8vy8HSGC141OBg1mXHJtzo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"page\":1,\n\"item_per_page\":10,\n\"columname\":\"name\",\n\"orderBy\" : \"ASC\",\n\"filterValue\" : \"AD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/show-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"show-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show-softDeletedUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admin/show-del-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"show-del-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restore Soft Deleted User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/restore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"restore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletet-User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/delete-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"delete-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit-User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "name",
+									"value": "mr.faizu",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "mobile",
+									"value": "9998909730",
+									"type": "default"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "default"
+								},
+								{
+									"key": "birthDate",
+									"value": "2001/03/30",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/edit-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"edit-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "active",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/active-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"active-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InActive",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/deactive-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"deactive-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show-Active User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/show-active-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"show-active-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show-inactive-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwMDU2fQ.3o7xbbG1SJk9zi-ez-Nu93RSpsqirK80er9DcVbTjvo",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admin/deactive-user-show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"deactive-user-show"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin- Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\":\"Admin@gmail.com\",\n    \"password\":\"Admin@999\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin-logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/admin/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book-Register Table Show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6MSwiZW1haWwxIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNjIwNjcyfQ.haeBebn2M4a6iyCKeEa0kM8q8nuICkgF5-X3gVG-kx4",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page\":1,\n\"item_per_page\":4,\n\"columname\":\"id\",\n\"orderBy\" : \"ASC\",\n\"filterValue\" : \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/show-register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"show-register"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "item_per_page",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,36 @@
+ *** Library management system ***
+
+This project is working on an express js framework based on the Node Js platform. Also, we use SQL to manage Database. 
+
+1.  Install Node Js in the system
+-->  sudo apt install nodejs [Install Node Js by using CMD]
+-->  node -v  [Check the version of the node]
+
+2.  Install NPM in the system
+-->  sudo apt install npm [Install NPM Js by using CMD]
+-->  npm -v  [Check the version of the NPM]
+
+3.  Open Attached file in VS Code
+
+4.  Open terminal and run bellow cammand
+-->  node -v     [Check the node is working here]
+-->  npm -v      [Check the npm is working here]
+-->  npm i       [For this project required dependencies are mentioned in the package.json file. so for install that, run this command]
+
+5.  Install MySQL 
+->  snap install mysql-workbench-community  [Install MySQL and setup the Configuration]
+->  CREATE SCHEMA `library`;                [Run this cammand in the MySQL Query so Library Database create]
+
+6.  We use Sequelize to manage database, Sequelize is Node Js based Object relational mapper that makes it easy to work with MySQL. We already install Sequelize dependency, so go to .env file and fill required Configuration. 
+
+7.  We use mysql .
+->  apt-get install phpmyadmin   [Run this command in the Vs Code terminal to migrate the model with database] 
+-> npm install mysql2
+--> first of all you need to create database with name  Library
+-->  http://localhost/phpmyadmin/index.php?route=/server/import   and select library.sql file from mysql folder
+
+
+8.  We use Postman for the testing APIs
+->  sudo snap install postman               [Run this command in the local CMD for install postman]
+
+9.  In the postman import "lib.postman_collection.json" file which is in the attachment. So uyou can access all the neccery  Collections of the APIs and Global Enviroments of this project.
